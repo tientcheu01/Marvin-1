@@ -1,0 +1,164 @@
+body {
+  background-color: #f4f6ff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.tarification {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarification h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #4c4f61;
+}
+
+.interrupteur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.interrupteur span {
+  font-size: 1em;
+  color: #7c8297;
+}
+
+.interrupteur input {
+  display: none;
+}
+
+.interrupteur label {
+  background-color: #e0e3f3;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  width: 60px;
+}
+
+.interrupteur label::before {
+  background-color: #656ab6;
+  border-radius: 50%;
+  content: '';
+  height: 20px;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  transition: transform 0.3s;
+  width: 20px;
+}
+
+.interrupteur input:checked + label::before {
+  transform: translateX(30px);
+}
+
+.cartes-tarification {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.carte {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 300px;
+  height: 350px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carte .prix {
+  font-size: 2.5em;
+  margin: 20px 0;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.carte .prix .devise {
+  font-size: 0.5em;
+  vertical-align: top;
+  margin-top: 0.2em;
+}
+
+.mise-en-avant {
+  background-color: #7b83eb;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carte h2 {
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: inherit;
+}
+
+.carte ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  color: inherit;
+}
+
+.carte ul li {
+  margin: 10px 0;
+  color: inherit;
+}
+
+.en-savoir-plus {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.mise-en-avant .en-savoir-plus {
+  background-color: #7b83eb;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.en-savoir-plus:hover,
+.en-savoir-plus:focus {
+  background-color: #e0e3f3;
+}
+
+.mise-en-avant .en-savoir-plus:hover,
+.mise-en-avant .en-savoir-plus:focus {
+  background-color: #ffffff;
+  color: #7b83eb;
+}
+
+@media (max-width: 768px) {
+  .cartes-tarification {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .carte {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+  }
+
+  .mise-en-avant {
+      transform: scale(1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
